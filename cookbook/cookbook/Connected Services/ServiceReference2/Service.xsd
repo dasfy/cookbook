@@ -49,4 +49,49 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetHowto">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetHowtoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetHowtoResult" nillable="true" type="q5:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddRecept">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="autor" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="kitchen" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="howto" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="calories" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ingred1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="measurec1" type="xs:int" />
+        <xs:element minOccurs="0" name="measure1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ingred2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="measurec2" type="xs:int" />
+        <xs:element minOccurs="0" name="measure2" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ingred3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="measurec3" type="xs:int" />
+        <xs:element minOccurs="0" name="measure3" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ingred4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="measurec4" type="xs:int" />
+        <xs:element minOccurs="0" name="measure4" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ingred5" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="measurec5" type="xs:int" />
+        <xs:element minOccurs="0" name="measure5" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddReceptResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

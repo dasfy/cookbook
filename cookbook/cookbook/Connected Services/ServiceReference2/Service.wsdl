@@ -31,6 +31,18 @@
   <wsdl:message name="IService_GetKitchen_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetKitchenResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetHowto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHowto" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetHowto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHowtoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddRecept_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddRecept" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddRecept_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddReceptResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetIngred">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetIngred" message="tns:IService_GetIngred_InputMessage" />
@@ -47,6 +59,14 @@
     <wsdl:operation name="GetKitchen">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetKitchen" message="tns:IService_GetKitchen_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetKitchenResponse" message="tns:IService_GetKitchen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHowto">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetHowto" message="tns:IService_GetHowto_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetHowtoResponse" message="tns:IService_GetHowto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRecept">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddRecept" message="tns:IService_AddRecept_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddReceptResponse" message="tns:IService_AddRecept_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -80,6 +100,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetKitchen">
       <soap:operation soapAction="http://tempuri.org/IService/GetKitchen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHowto">
+      <soap:operation soapAction="http://tempuri.org/IService/GetHowto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRecept">
+      <soap:operation soapAction="http://tempuri.org/IService/AddRecept" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

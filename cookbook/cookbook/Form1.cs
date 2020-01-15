@@ -42,12 +42,16 @@ namespace cookbook
             smth = service.GetKitchen();
             for (var i = 0; i < smth.Length; i++)
                 kitchenC.Items.Add(smth[i]);
+
+            //fill howto box
+            smth = service.GetHowto();
+            for (var i = 0; i < smth.Length; i++)
+                howtoC.Items.Add(smth[i]);
         }
 
         private void addReceptB_Click(object sender, EventArgs e)
         {
-            var smth = service.GetIngred();
-            MessageBox.Show(String.Join(" ",smth));
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -38,6 +38,62 @@ namespace cookbook.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetKitchen", ReplyAction="http://tempuri.org/IService/GetKitchenResponse")]
         System.Threading.Tasks.Task<string[]> GetKitchenAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetHowto", ReplyAction="http://tempuri.org/IService/GetHowtoResponse")]
+        string[] GetHowto();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetHowto", ReplyAction="http://tempuri.org/IService/GetHowtoResponse")]
+        System.Threading.Tasks.Task<string[]> GetHowtoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecept", ReplyAction="http://tempuri.org/IService/AddReceptResponse")]
+        void AddRecept(
+                    string name, 
+                    string autor, 
+                    string kitchen, 
+                    string howto, 
+                    string category, 
+                    string description, 
+                    string calories, 
+                    string ingred1, 
+                    int measurec1, 
+                    string measure1, 
+                    string ingred2, 
+                    int measurec2, 
+                    string measure2, 
+                    string ingred3, 
+                    int measurec3, 
+                    string measure3, 
+                    string ingred4, 
+                    int measurec4, 
+                    string measure4, 
+                    string ingred5, 
+                    int measurec5, 
+                    string measure5);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecept", ReplyAction="http://tempuri.org/IService/AddReceptResponse")]
+        System.Threading.Tasks.Task AddReceptAsync(
+                    string name, 
+                    string autor, 
+                    string kitchen, 
+                    string howto, 
+                    string category, 
+                    string description, 
+                    string calories, 
+                    string ingred1, 
+                    int measurec1, 
+                    string measure1, 
+                    string ingred2, 
+                    int measurec2, 
+                    string measure2, 
+                    string ingred3, 
+                    int measurec3, 
+                    string measure3, 
+                    string ingred4, 
+                    int measurec4, 
+                    string measure4, 
+                    string ingred5, 
+                    int measurec5, 
+                    string measure5);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +153,66 @@ namespace cookbook.ServiceReference2 {
         
         public System.Threading.Tasks.Task<string[]> GetKitchenAsync() {
             return base.Channel.GetKitchenAsync();
+        }
+        
+        public string[] GetHowto() {
+            return base.Channel.GetHowto();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetHowtoAsync() {
+            return base.Channel.GetHowtoAsync();
+        }
+        
+        public void AddRecept(
+                    string name, 
+                    string autor, 
+                    string kitchen, 
+                    string howto, 
+                    string category, 
+                    string description, 
+                    string calories, 
+                    string ingred1, 
+                    int measurec1, 
+                    string measure1, 
+                    string ingred2, 
+                    int measurec2, 
+                    string measure2, 
+                    string ingred3, 
+                    int measurec3, 
+                    string measure3, 
+                    string ingred4, 
+                    int measurec4, 
+                    string measure4, 
+                    string ingred5, 
+                    int measurec5, 
+                    string measure5) {
+            base.Channel.AddRecept(name, autor, kitchen, howto, category, description, calories, ingred1, measurec1, measure1, ingred2, measurec2, measure2, ingred3, measurec3, measure3, ingred4, measurec4, measure4, ingred5, measurec5, measure5);
+        }
+        
+        public System.Threading.Tasks.Task AddReceptAsync(
+                    string name, 
+                    string autor, 
+                    string kitchen, 
+                    string howto, 
+                    string category, 
+                    string description, 
+                    string calories, 
+                    string ingred1, 
+                    int measurec1, 
+                    string measure1, 
+                    string ingred2, 
+                    int measurec2, 
+                    string measure2, 
+                    string ingred3, 
+                    int measurec3, 
+                    string measure3, 
+                    string ingred4, 
+                    int measurec4, 
+                    string measure4, 
+                    string ingred5, 
+                    int measurec5, 
+                    string measure5) {
+            return base.Channel.AddReceptAsync(name, autor, kitchen, howto, category, description, calories, ingred1, measurec1, measure1, ingred2, measurec2, measure2, ingred3, measurec3, measure3, ingred4, measurec4, measure4, ingred5, measurec5, measure5);
         }
     }
 }

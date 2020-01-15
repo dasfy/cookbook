@@ -63,6 +63,18 @@ public class DB
         return measures;
     }
 
+    public List<string> GetHowtos()
+    {
+        List<string> howtos = new List<string>();
+        OpenConnection();
+        var command = new NpgsqlCommand("select howto_name from public.howtocook", conn);
+        NpgsqlDataReader dr = command.ExecuteReader();
+        while (dr.Read())
+            howtos.Add(Convert.ToString(Convert.ToString(dr[0])));
+        CloseConnection();
+        return howtos;
+    }
+
     public List<string> GetAutors()
     {
         List<string> autors = new List<string>();
