@@ -38,18 +38,18 @@
             this.ingred4C = new System.Windows.Forms.ComboBox();
             this.ingred5C = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.measure5C = new System.Windows.Forms.ComboBox();
+            this.measure4C = new System.Windows.Forms.ComboBox();
+            this.measure3C = new System.Windows.Forms.ComboBox();
+            this.measure2C = new System.Windows.Forms.ComboBox();
+            this.measure1C = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.measure1C = new System.Windows.Forms.ComboBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.measure2C = new System.Windows.Forms.ComboBox();
-            this.measure3C = new System.Windows.Forms.ComboBox();
-            this.measure4C = new System.Windows.Forms.ComboBox();
-            this.measure5C = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -92,11 +92,11 @@
             // 
             // ingred1C
             // 
-            this.ingred1C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.ingred1C.Font = new System.Drawing.Font("Roboto", 10F);
             this.ingred1C.FormattingEnabled = true;
             this.ingred1C.Location = new System.Drawing.Point(18, 47);
             this.ingred1C.Name = "ingred1C";
-            this.ingred1C.Size = new System.Drawing.Size(154, 24);
+            this.ingred1C.Size = new System.Drawing.Size(154, 23);
             this.ingred1C.TabIndex = 2;
             // 
             // ingred2C
@@ -154,6 +154,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ингредиенты                            единица измерения";
             // 
+            // measure5C
+            // 
+            this.measure5C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.measure5C.FormattingEnabled = true;
+            this.measure5C.Location = new System.Drawing.Point(201, 197);
+            this.measure5C.Name = "measure5C";
+            this.measure5C.Size = new System.Drawing.Size(59, 24);
+            this.measure5C.TabIndex = 2;
+            // 
+            // measure4C
+            // 
+            this.measure4C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.measure4C.FormattingEnabled = true;
+            this.measure4C.Location = new System.Drawing.Point(201, 161);
+            this.measure4C.Name = "measure4C";
+            this.measure4C.Size = new System.Drawing.Size(59, 24);
+            this.measure4C.TabIndex = 2;
+            // 
+            // measure3C
+            // 
+            this.measure3C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.measure3C.FormattingEnabled = true;
+            this.measure3C.Location = new System.Drawing.Point(201, 123);
+            this.measure3C.Name = "measure3C";
+            this.measure3C.Size = new System.Drawing.Size(59, 24);
+            this.measure3C.TabIndex = 2;
+            // 
+            // measure2C
+            // 
+            this.measure2C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.measure2C.FormattingEnabled = true;
+            this.measure2C.Location = new System.Drawing.Point(201, 85);
+            this.measure2C.Name = "measure2C";
+            this.measure2C.Size = new System.Drawing.Size(59, 24);
+            this.measure2C.TabIndex = 2;
+            // 
+            // measure1C
+            // 
+            this.measure1C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.measure1C.FormattingEnabled = true;
+            this.measure1C.Location = new System.Drawing.Point(201, 47);
+            this.measure1C.Name = "measure1C";
+            this.measure1C.Size = new System.Drawing.Size(59, 24);
+            this.measure1C.TabIndex = 2;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -183,15 +228,6 @@
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "- Кухня";
-            // 
-            // measure1C
-            // 
-            this.measure1C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.measure1C.FormattingEnabled = true;
-            this.measure1C.Location = new System.Drawing.Point(201, 47);
-            this.measure1C.Name = "measure1C";
-            this.measure1C.Size = new System.Drawing.Size(59, 24);
-            this.measure1C.TabIndex = 2;
             // 
             // richTextBox1
             // 
@@ -236,42 +272,6 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // measure2C
-            // 
-            this.measure2C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.measure2C.FormattingEnabled = true;
-            this.measure2C.Location = new System.Drawing.Point(201, 85);
-            this.measure2C.Name = "measure2C";
-            this.measure2C.Size = new System.Drawing.Size(59, 24);
-            this.measure2C.TabIndex = 2;
-            // 
-            // measure3C
-            // 
-            this.measure3C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.measure3C.FormattingEnabled = true;
-            this.measure3C.Location = new System.Drawing.Point(201, 123);
-            this.measure3C.Name = "measure3C";
-            this.measure3C.Size = new System.Drawing.Size(59, 24);
-            this.measure3C.TabIndex = 2;
-            // 
-            // measure4C
-            // 
-            this.measure4C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.measure4C.FormattingEnabled = true;
-            this.measure4C.Location = new System.Drawing.Point(201, 161);
-            this.measure4C.Name = "measure4C";
-            this.measure4C.Size = new System.Drawing.Size(59, 24);
-            this.measure4C.TabIndex = 2;
-            // 
-            // measure5C
-            // 
-            this.measure5C.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.measure5C.FormattingEnabled = true;
-            this.measure5C.Location = new System.Drawing.Point(201, 197);
-            this.measure5C.Name = "measure5C";
-            this.measure5C.Size = new System.Drawing.Size(59, 24);
-            this.measure5C.TabIndex = 2;
             // 
             // Form1
             // 

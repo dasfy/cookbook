@@ -22,4 +22,7 @@ public interface IService
 
 	[OperationContract]
 	List<string> GetKitchen();
+
+	[OperationContract]
+	void AddRecept();
 }

@@ -30,4 +30,9 @@ public class Service : IService
 	{
 		return db.GetKitchens();
 	}
+
+	public void AddRecept()
+	{
+		db.AddRecepts();
+	}
 }
