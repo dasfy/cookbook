@@ -26,6 +26,18 @@ namespace cookbook.ServiceReference2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMeasure", ReplyAction="http://tempuri.org/IService/GetMeasureResponse")]
         System.Threading.Tasks.Task<string[]> GetMeasureAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAutor", ReplyAction="http://tempuri.org/IService/GetAutorResponse")]
+        string[] GetAutor();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetAutor", ReplyAction="http://tempuri.org/IService/GetAutorResponse")]
+        System.Threading.Tasks.Task<string[]> GetAutorAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetKitchen", ReplyAction="http://tempuri.org/IService/GetKitchenResponse")]
+        string[] GetKitchen();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetKitchen", ReplyAction="http://tempuri.org/IService/GetKitchenResponse")]
+        System.Threading.Tasks.Task<string[]> GetKitchenAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +81,22 @@ namespace cookbook.ServiceReference2 {
         
         public System.Threading.Tasks.Task<string[]> GetMeasureAsync() {
             return base.Channel.GetMeasureAsync();
+        }
+        
+        public string[] GetAutor() {
+            return base.Channel.GetAutor();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetAutorAsync() {
+            return base.Channel.GetAutorAsync();
+        }
+        
+        public string[] GetKitchen() {
+            return base.Channel.GetKitchen();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetKitchenAsync() {
+            return base.Channel.GetKitchenAsync();
         }
     }
 }

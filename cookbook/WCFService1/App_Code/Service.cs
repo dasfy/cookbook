@@ -25,4 +25,9 @@ public class Service : IService
 	{
 		return db.GetAutors();
 	}
+
+	public List<string> GetKitchen()
+	{
+		return db.GetKitchens();
+	}
 }

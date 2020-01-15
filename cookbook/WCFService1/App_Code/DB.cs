@@ -74,4 +74,16 @@ public class DB
         CloseConnection();
         return autors;
     }
+
+    public List<string> GetKitchens()
+    {
+        List<string> autors = new List<string>();
+        OpenConnection();
+        var command = new NpgsqlCommand("select kitchen_name from public.kitchen", conn);
+        NpgsqlDataReader dr = command.ExecuteReader();
+        while (dr.Read())
+            autors.Add(Convert.ToString(Convert.ToString(dr[0])));
+        CloseConnection();
+        return autors;
+    }
 }

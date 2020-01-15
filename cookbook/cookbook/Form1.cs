@@ -27,11 +27,21 @@ namespace cookbook
                     boxes[i].Items.Add(smth[j]);
 
             //fill measure boxes
-            var smthn = service.GetMeasure();
+            smth = service.GetMeasure();
             ComboBox[] boxes2 = new ComboBox[] { measure1C, measure2C, measure3C, measure4C, measure5C };
             for (var i = 0; i < 5; i++)
-                for (var j = 0; j < smthn.Length; j++)
-                    boxes2[i].Items.Add(smthn[j]);
+                for (var j = 0; j < smth.Length; j++)
+                    boxes2[i].Items.Add(smth[j]);
+
+            //fill autor box
+            smth = service.GetAutor();
+            for (var i = 0; i < smth.Length; i++)
+                autorC.Items.Add(smth[i]);
+
+            //fill kitchen box
+            smth = service.GetKitchen();
+            for (var i = 0; i < smth.Length; i++)
+                kitchenC.Items.Add(smth[i]);
         }
 
         private void addReceptB_Click(object sender, EventArgs e)

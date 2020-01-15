@@ -19,4 +19,7 @@ public interface IService
 
 	[OperationContract]
 	List<string> GetAutor();
+
+	[OperationContract]
+	List<string> GetKitchen();
 }
