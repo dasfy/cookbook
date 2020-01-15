@@ -62,4 +62,16 @@ public class DB
         CloseConnection();
         return measures;
     }
+
+    public List<string> GetAutors()
+    {
+        List<string> autors = new List<string>();
+        OpenConnection();
+        var command = new NpgsqlCommand("select autor_name from public.autors", conn);
+        NpgsqlDataReader dr = command.ExecuteReader();
+        while (dr.Read())
+            autors.Add(Convert.ToString(Convert.ToString(dr[0])));
+        CloseConnection();
+        return autors;
+    }
 }

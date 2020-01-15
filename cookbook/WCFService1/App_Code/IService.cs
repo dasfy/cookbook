@@ -16,4 +16,7 @@ public interface IService
 
 	[OperationContract]
 	List<string> GetMeasure();
+
+	[OperationContract]
+	List<string> GetAutor();
 }

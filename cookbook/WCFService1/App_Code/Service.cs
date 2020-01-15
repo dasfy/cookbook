@@ -20,4 +20,9 @@ public class Service : IService
 	{
 		return db.GetMeasures();
 	}
+
+	public List<string> GetAutor()
+	{
+		return db.GetAutors();
+	}
 }
