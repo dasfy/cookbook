@@ -139,27 +139,22 @@ namespace cookbook
             service.AddRecept(name, autor, kitchen, howto, category, description, calories, ingred1, measureV1, measure1,
                               ingred2, measureV2, measure2, ingred3, measureV3, measure3, ingred4, measureV4, measure4,
                               ingred5, measureV5, measure5);
-
-            //MessageBox.Show( string.Join("\n", service.Test()) );
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form form2 = new adding("autor");
             form2.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form form2 = new adding("kitchen");
             form2.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
             Form form2 = new adding("ingredient");
             form2.ShowDialog();
         }
@@ -167,6 +162,51 @@ namespace cookbook
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //fill ingred  boxes
+            var smth = service.GetIngred();
+            ComboBox[] boxes = new ComboBox[] { ingred1C, ingred2C, ingred3C, ingred4C, ingred5C };
+            for (var i = 0; i < 5; i++)
+                boxes[i].Items.Clear();
+            for (var i = 0; i < 5; i++)
+                for (var j = 0; j < smth.Length; j++)
+                    boxes[i].Items.Add(smth[j]);
+
+            //fill measure boxes
+            smth = service.GetMeasure();
+            ComboBox[] boxes2 = new ComboBox[] { measure1C, measure2C, measure3C, measure4C, measure5C };
+            for (var i = 0; i < 5; i++)
+                boxes2[i].Items.Clear();
+            for (var i = 0; i < 5; i++)
+                for (var j = 0; j < smth.Length; j++)
+                    boxes2[i].Items.Add(smth[j]);
+
+            //fill autor box
+            smth = service.GetAutor();
+            autorC.Items.Clear();
+            for (var i = 0; i < smth.Length; i++)
+                autorC.Items.Add(smth[i]);
+
+            //fill kitchen box
+            smth = service.GetKitchen();
+            kitchenC.Items.Clear();
+            for (var i = 0; i < smth.Length; i++)
+                kitchenC.Items.Add(smth[i]);
+
+            //fill howto box
+            smth = service.GetHowto();
+            howtoC.Items.Clear();
+            for (var i = 0; i < smth.Length; i++)
+                howtoC.Items.Add(smth[i]);
+
+            //fill howto box
+            smth = service.GetCategory();
+            categoryC.Items.Clear();
+            for (var i = 0; i < smth.Length; i++)
+                categoryC.Items.Add(smth[i]);
         }
     }
 }
