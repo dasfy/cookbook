@@ -55,7 +55,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.descriptionT = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -329,14 +329,14 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "- Кухня";
             // 
-            // richTextBox1
+            // descriptionT
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.richTextBox1.Location = new System.Drawing.Point(12, 173);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(317, 153);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.descriptionT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.descriptionT.Location = new System.Drawing.Point(12, 173);
+            this.descriptionT.Name = "descriptionT";
+            this.descriptionT.Size = new System.Drawing.Size(317, 153);
+            this.descriptionT.TabIndex = 6;
+            this.descriptionT.Text = "";
             // 
             // label5
             // 
@@ -414,7 +414,7 @@
             this.Controls.Add(this.howtoC);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.descriptionT);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -449,7 +449,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox measure1C;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox descriptionT;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

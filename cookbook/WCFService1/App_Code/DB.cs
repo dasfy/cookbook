@@ -99,6 +99,18 @@ public class DB
         return autors;
     }
 
+    public List<string> Tests()
+    {
+        List<string> autors = new List<string>();
+        OpenConnection();
+        var command = new NpgsqlCommand("select kitchen_name from public.kitchen where kitchen_id = 20", conn);
+        NpgsqlDataReader dr = command.ExecuteReader();
+        while (dr.Read())
+            autors.Add(Convert.ToString(Convert.ToString(dr[0])));
+        CloseConnection();
+        return autors;
+    }
+
     public void AddRecepts(string name, string autor, string kitchen, string howto, string category, string description, string calories,
                            string ingred1, int measurec1, string measure1, string ingred2, int measurec2, string measure2,
                            string ingred3, int measurec3, string measure3, string ingred4, int measurec4, string measure4,
@@ -108,45 +120,71 @@ public class DB
         names.Add(ingred1); names.Add(ingred2); names.Add(ingred3); names.Add(ingred4); names.Add(ingred5);
         List<int> ingredsIds = new List<int>();
         List<int> measureIds = new List<int>();
+        List<int> measureCs = new List<int>();
+        if (measurec1 != -1)
+            measureCs.Add(measurec1);
+        if (measurec2 != -1)
+            measureCs.Add(measurec2);
+        if (measurec3 != -1)
+            measureCs.Add(measurec3);
+        if (measurec4 != -1)
+            measureCs.Add(measurec4);
+        if (measurec5 != -1)
+            measureCs.Add(measurec5);
         OpenConnection();
+
         for (int i = 0; i < names.Count; i++)
         {
-            var command = new NpgsqlCommand("select ingred_id from public.ingredients where ingred_name = " + names[i], conn);
-            ingredsIds.Add( (int) command.ExecuteScalar());
+            if (names[i] != "s")
+            {
+                var command = new NpgsqlCommand("select ingred_id from public.ingredients where ingred_name = '" + names[i] + "'", conn);
+                ingredsIds.Add((int)command.ExecuteScalar());
+            }
         }
         names.Clear();
         names.Add(measure1); names.Add(measure2); names.Add(measure3); names.Add(measure4); names.Add(measure5);
         for (int i = 0; i < names.Count; i++)
         {
-            var command = new NpgsqlCommand("select measure_id from public.measure where measure_name = " + names[i], conn);
-            measureIds.Add( (int) command.ExecuteScalar());
+            if (names[i] != "s")
+            { 
+                var command = new NpgsqlCommand("select measur_id from public.measure where measur_name = '" + names[i] + "'", conn);
+                measureIds.Add((int)command.ExecuteScalar());
+            }
         }
         var cmd = new NpgsqlCommand();
 
-        cmd = new NpgsqlCommand("select autor_id form public.autor where autor_name = " + autor, conn);
+        cmd = new NpgsqlCommand("select autor_id from public.autors where autor_name = '" + autor +"'", conn);
         int autorId = (int)cmd.ExecuteScalar();
 
-        cmd = new NpgsqlCommand("select category_id form public.category where category_name = " + category, conn);
+        cmd = new NpgsqlCommand("select category_id from public.category where category_name = '" + category+"'", conn);
         int categoryId = (int)cmd.ExecuteScalar();
 
-        cmd = new NpgsqlCommand("select howto_id form public.howtocook where howto_name = " + howto, conn);
+        cmd = new NpgsqlCommand("select howto_id from public.howtocook where howto_name = '" + howto+"'", conn);
         int howtoId = (int)cmd.ExecuteScalar();
 
-        cmd = new NpgsqlCommand("select kitchen_id form public.kitchen where kitchen_name = " + kitchen, conn);
+        cmd = new NpgsqlCommand("select kitchen_id from public.kitchen where kitchen_name = '" + kitchen+"'", conn);
         int kitchenId = (int) cmd.ExecuteScalar();
 
+        
         cmd = new NpgsqlCommand("insert into public.recept (recept_name, category_id, autor_id, howto_id," +
-                                "kitchen_id, calories, description) values ("+name+","+categoryId+","+
-                                autorId+","+howtoId+","+kitchenId+","+calories+","+description+")", conn);
+                                "kitchen_id, calories, description) values ('"+name+"',"+categoryId+","+
+                                autorId+","+howtoId+","+kitchenId+",'"+calories+"','"+description+"')", conn);
         cmd.ExecuteScalar();
 
-        cmd = new NpgsqlCommand("select recept_id from public.recepts", conn);
+        cmd = new NpgsqlCommand("select recept_id from public.recept", conn);
         NpgsqlDataReader dr = cmd.ExecuteReader();
         int receptId = 0;
         while (dr.Read())
             receptId = (int) dr[0];
+        dr.Close();
 
-       // cmd = new NpgsqlCommand("insert into public.composition (ingred_id, recept_id, measur_id, ammount) values ("+
+        for (var i = 0; i < ingredsIds.Count; i++)
+        {
+            cmd = new NpgsqlCommand("insert into public.composition (ingred_id, recept_id, measur_id, ammount) values (" +
+                                   ingredsIds[i] + "," + receptId + "," + measureIds[i] + "," + measureCs[i] + ")", conn);
+            cmd.ExecuteScalar();
+        }
 
+        CloseConnection();
     }
 }

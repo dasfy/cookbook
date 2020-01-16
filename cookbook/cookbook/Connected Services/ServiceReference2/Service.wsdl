@@ -37,6 +37,12 @@
   <wsdl:message name="IService_GetHowto_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetHowtoResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_Test_InputMessage">
+    <wsdl:part name="parameters" element="tns:Test" />
+  </wsdl:message>
+  <wsdl:message name="IService_Test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TestResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AddRecept_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecept" />
   </wsdl:message>
@@ -63,6 +69,10 @@
     <wsdl:operation name="GetHowto">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetHowto" message="tns:IService_GetHowto_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetHowtoResponse" message="tns:IService_GetHowto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/Test" message="tns:IService_Test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/TestResponse" message="tns:IService_Test_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecept">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddRecept" message="tns:IService_AddRecept_InputMessage" />
@@ -109,6 +119,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetHowto">
       <soap:operation soapAction="http://tempuri.org/IService/GetHowto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Test">
+      <soap:operation soapAction="http://tempuri.org/IService/Test" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

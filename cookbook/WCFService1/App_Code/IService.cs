@@ -27,8 +27,11 @@ public interface IService
 	List<string> GetHowto();
 
 	[OperationContract]
+	List<string> Test();
+
+	[OperationContract]
 	void AddRecept(string name, string autor, string kitchen, string howto, string category, string description, string calories,
-						   string ingred1, int measurec1, string measure1, string ingred2, int measurec2, string measure2,
-						   string ingred3, int measurec3, string measure3, string ingred4, int measurec4, string measure4,
-						   string ingred5, int measurec5, string measure5);
+						   string ingred1, int measurec1, string measure1, string ingred2 = "", int measurec2 = -1, string measure2 = "",
+						   string ingred3 = "", int measurec3 = -1, string measure3 = "", string ingred4 = "", int measurec4 = -1, string measure4 = "",
+						   string ingred5 = "", int measurec5 = -1, string measure5 = "");
 }

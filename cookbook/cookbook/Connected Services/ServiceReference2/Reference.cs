@@ -45,6 +45,12 @@ namespace cookbook.ServiceReference2 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetHowto", ReplyAction="http://tempuri.org/IService/GetHowtoResponse")]
         System.Threading.Tasks.Task<string[]> GetHowtoAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Test", ReplyAction="http://tempuri.org/IService/TestResponse")]
+        string[] Test();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Test", ReplyAction="http://tempuri.org/IService/TestResponse")]
+        System.Threading.Tasks.Task<string[]> TestAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecept", ReplyAction="http://tempuri.org/IService/AddReceptResponse")]
         void AddRecept(
                     string name, 
@@ -161,6 +167,14 @@ namespace cookbook.ServiceReference2 {
         
         public System.Threading.Tasks.Task<string[]> GetHowtoAsync() {
             return base.Channel.GetHowtoAsync();
+        }
+        
+        public string[] Test() {
+            return base.Channel.Test();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> TestAsync() {
+            return base.Channel.TestAsync();
         }
         
         public void AddRecept(
