@@ -63,6 +63,18 @@ public class DB
         return measures;
     }
 
+    public List<string> GetCategorys()
+    {
+        List<string> categorys = new List<string>();
+        OpenConnection();
+        var command = new NpgsqlCommand("select category_name from public.category", conn);
+        NpgsqlDataReader dr = command.ExecuteReader();
+        while (dr.Read())
+            categorys.Add(Convert.ToString(Convert.ToString(dr[0])));
+        CloseConnection();
+        return categorys;
+    }
+
     public List<string> GetHowtos()
     {
         List<string> howtos = new List<string>();
@@ -73,6 +85,28 @@ public class DB
             howtos.Add(Convert.ToString(Convert.ToString(dr[0])));
         CloseConnection();
         return howtos;
+    }
+
+    public void AddAutor(string name)
+    {
+        OpenConnection();
+        var command = new NpgsqlCommand("insert into public.autors (autor_name) values ('"+name+"')", conn);
+        command.ExecuteScalar();
+        CloseConnection();
+    }
+    public void AddKitchen(string name)
+    {
+        OpenConnection();
+        var command = new NpgsqlCommand("insert into public.kitchen (kitchen_name) values ('" + name + "')", conn);
+        command.ExecuteScalar();
+        CloseConnection();
+    }
+    public void AddIngredient(string name)
+    {
+        OpenConnection();
+        var command = new NpgsqlCommand("insert into public.ingredients (ingred_name) values ('" + name + "')", conn);
+        command.ExecuteScalar();
+        CloseConnection();
     }
 
     public List<string> GetAutors()

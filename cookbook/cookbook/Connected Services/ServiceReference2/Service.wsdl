@@ -43,6 +43,30 @@
   <wsdl:message name="IService_Test_OutputMessage">
     <wsdl:part name="parameters" element="tns:TestResponse" />
   </wsdl:message>
+  <wsdl:message name="IService_GetCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddAutors_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAutors" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddAutors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAutorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddKitchens_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddKitchens" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddKitchens_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddKitchensResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddIngredients_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddIngredients" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddIngredients_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddIngredientsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService_AddRecept_InputMessage">
     <wsdl:part name="parameters" element="tns:AddRecept" />
   </wsdl:message>
@@ -73,6 +97,22 @@
     <wsdl:operation name="Test">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/Test" message="tns:IService_Test_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/TestResponse" message="tns:IService_Test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetCategory" message="tns:IService_GetCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetCategoryResponse" message="tns:IService_GetCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAutors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddAutors" message="tns:IService_AddAutors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddAutorsResponse" message="tns:IService_AddAutors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddKitchens">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddKitchens" message="tns:IService_AddKitchens_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddKitchensResponse" message="tns:IService_AddKitchens_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddIngredients">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddIngredients" message="tns:IService_AddIngredients_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddIngredientsResponse" message="tns:IService_AddIngredients_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddRecept">
       <wsdl:input wsaw:Action="http://tempuri.org/IService/AddRecept" message="tns:IService_AddRecept_InputMessage" />
@@ -128,6 +168,42 @@
     </wsdl:operation>
     <wsdl:operation name="Test">
       <soap:operation soapAction="http://tempuri.org/IService/Test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategory">
+      <soap:operation soapAction="http://tempuri.org/IService/GetCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAutors">
+      <soap:operation soapAction="http://tempuri.org/IService/AddAutors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddKitchens">
+      <soap:operation soapAction="http://tempuri.org/IService/AddKitchens" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddIngredients">
+      <soap:operation soapAction="http://tempuri.org/IService/AddIngredients" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

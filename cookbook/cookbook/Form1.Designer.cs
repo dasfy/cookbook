@@ -61,7 +61,10 @@
             this.button2 = new System.Windows.Forms.Button();
             this.howtoC = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.categoryC = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.caloriesT = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,7 +91,7 @@
             // 
             this.autorC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.autorC.FormattingEnabled = true;
-            this.autorC.Location = new System.Drawing.Point(12, 88);
+            this.autorC.Location = new System.Drawing.Point(12, 137);
             this.autorC.Name = "autorC";
             this.autorC.Size = new System.Drawing.Size(154, 24);
             this.autorC.TabIndex = 2;
@@ -97,7 +100,7 @@
             // 
             this.kitchenC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.kitchenC.FormattingEnabled = true;
-            this.kitchenC.Location = new System.Drawing.Point(12, 126);
+            this.kitchenC.Location = new System.Drawing.Point(12, 175);
             this.kitchenC.Name = "kitchenC";
             this.kitchenC.Size = new System.Drawing.Size(154, 24);
             this.kitchenC.TabIndex = 2;
@@ -185,6 +188,7 @@
             this.button3.TabIndex = 9;
             this.button3.Text = "+";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label7
             // 
@@ -313,7 +317,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(183, 90);
+            this.label2.Location = new System.Drawing.Point(183, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 17);
             this.label2.TabIndex = 5;
@@ -323,7 +327,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(184, 129);
+            this.label3.Location = new System.Drawing.Point(184, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 5;
@@ -332,7 +336,7 @@
             // descriptionT
             // 
             this.descriptionT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.descriptionT.Location = new System.Drawing.Point(12, 173);
+            this.descriptionT.Location = new System.Drawing.Point(12, 254);
             this.descriptionT.Name = "descriptionT";
             this.descriptionT.Size = new System.Drawing.Size(317, 153);
             this.descriptionT.TabIndex = 6;
@@ -342,7 +346,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label5.Location = new System.Drawing.Point(12, 153);
+            this.label5.Location = new System.Drawing.Point(12, 234);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 5;
@@ -353,7 +357,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(245, 85);
+            this.button1.Location = new System.Drawing.Point(245, 134);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(34, 27);
             this.button1.TabIndex = 7;
@@ -366,12 +370,13 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(245, 124);
+            this.button2.Location = new System.Drawing.Point(245, 173);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(34, 27);
             this.button2.TabIndex = 8;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // howtoC
             // 
@@ -392,24 +397,51 @@
             this.label8.TabIndex = 10;
             this.label8.Text = "- Способ приготовления";
             // 
-            // button4
+            // categoryC
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(318, 73);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 27);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "+";
-            this.button4.UseVisualStyleBackColor = true;
+            this.categoryC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.categoryC.FormattingEnabled = true;
+            this.categoryC.Location = new System.Drawing.Point(12, 95);
+            this.categoryC.Name = "categoryC";
+            this.categoryC.Size = new System.Drawing.Size(154, 24);
+            this.categoryC.TabIndex = 2;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(183, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(86, 17);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "- Категория";
+            // 
+            // caloriesT
+            // 
+            this.caloriesT.Font = new System.Drawing.Font("Roboto", 10F);
+            this.caloriesT.Location = new System.Drawing.Point(12, 209);
+            this.caloriesT.Multiline = true;
+            this.caloriesT.Name = "caloriesT";
+            this.caloriesT.Size = new System.Drawing.Size(154, 24);
+            this.caloriesT.TabIndex = 12;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(183, 209);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 17);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "- Калории";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 338);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(737, 414);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.caloriesT);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.howtoC);
             this.Controls.Add(this.button2);
@@ -417,15 +449,18 @@
             this.Controls.Add(this.descriptionT);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.kitchenC);
+            this.Controls.Add(this.categoryC);
             this.Controls.Add(this.autorC);
             this.Controls.Add(this.titleT);
             this.Controls.Add(this.addReceptB);
             this.Name = "Form1";
             this.Text = "Добавление рецепта";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -468,7 +503,10 @@
         private System.Windows.Forms.TextBox measure1T;
         private System.Windows.Forms.ComboBox howtoC;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ComboBox categoryC;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox caloriesT;
+        private System.Windows.Forms.Label label10;
     }
 }
 

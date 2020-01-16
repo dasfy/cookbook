@@ -51,6 +51,30 @@ namespace cookbook.ServiceReference2 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/Test", ReplyAction="http://tempuri.org/IService/TestResponse")]
         System.Threading.Tasks.Task<string[]> TestAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCategory", ReplyAction="http://tempuri.org/IService/GetCategoryResponse")]
+        string[] GetCategory();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetCategory", ReplyAction="http://tempuri.org/IService/GetCategoryResponse")]
+        System.Threading.Tasks.Task<string[]> GetCategoryAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddAutors", ReplyAction="http://tempuri.org/IService/AddAutorsResponse")]
+        void AddAutors(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddAutors", ReplyAction="http://tempuri.org/IService/AddAutorsResponse")]
+        System.Threading.Tasks.Task AddAutorsAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddKitchens", ReplyAction="http://tempuri.org/IService/AddKitchensResponse")]
+        void AddKitchens(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddKitchens", ReplyAction="http://tempuri.org/IService/AddKitchensResponse")]
+        System.Threading.Tasks.Task AddKitchensAsync(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddIngredients", ReplyAction="http://tempuri.org/IService/AddIngredientsResponse")]
+        void AddIngredients(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddIngredients", ReplyAction="http://tempuri.org/IService/AddIngredientsResponse")]
+        System.Threading.Tasks.Task AddIngredientsAsync(string name);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddRecept", ReplyAction="http://tempuri.org/IService/AddReceptResponse")]
         void AddRecept(
                     string name, 
@@ -175,6 +199,38 @@ namespace cookbook.ServiceReference2 {
         
         public System.Threading.Tasks.Task<string[]> TestAsync() {
             return base.Channel.TestAsync();
+        }
+        
+        public string[] GetCategory() {
+            return base.Channel.GetCategory();
+        }
+        
+        public System.Threading.Tasks.Task<string[]> GetCategoryAsync() {
+            return base.Channel.GetCategoryAsync();
+        }
+        
+        public void AddAutors(string name) {
+            base.Channel.AddAutors(name);
+        }
+        
+        public System.Threading.Tasks.Task AddAutorsAsync(string name) {
+            return base.Channel.AddAutorsAsync(name);
+        }
+        
+        public void AddKitchens(string name) {
+            base.Channel.AddKitchens(name);
+        }
+        
+        public System.Threading.Tasks.Task AddKitchensAsync(string name) {
+            return base.Channel.AddKitchensAsync(name);
+        }
+        
+        public void AddIngredients(string name) {
+            base.Channel.AddIngredients(name);
+        }
+        
+        public System.Threading.Tasks.Task AddIngredientsAsync(string name) {
+            return base.Channel.AddIngredientsAsync(name);
         }
         
         public void AddRecept(

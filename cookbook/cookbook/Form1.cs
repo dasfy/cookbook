@@ -47,6 +47,11 @@ namespace cookbook
             smth = service.GetHowto();
             for (var i = 0; i < smth.Length; i++)
                 howtoC.Items.Add(smth[i]);
+
+            //fill howto box
+            smth = service.GetCategory();
+            for (var i = 0; i < smth.Length; i++)
+                categoryC.Items.Add(smth[i]);
         }
 
         private void addReceptB_Click(object sender, EventArgs e)
@@ -54,11 +59,11 @@ namespace cookbook
             string name, description, calories, howto, autor, kitchen, category;
             name = titleT.Text;
             description = descriptionT.Text;
-            category = "Выпечка";
+            category = categoryC.Text;
             howto = howtoC.Text;
             autor = autorC.Text;
             kitchen = kitchenC.Text;
-            calories = "help";
+            calories = caloriesT.Text;
 
             string ingred1, ingred2, ingred3, ingred4, ingred5;
             if (ingred1C.Text != "")
@@ -140,7 +145,28 @@ namespace cookbook
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form form2 = new adding("autor");
+            form2.ShowDialog();
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form form2 = new adding("kitchen");
+            form2.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form form2 = new adding("ingredient");
+            form2.ShowDialog();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

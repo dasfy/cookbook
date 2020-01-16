@@ -271,3 +271,4 @@ E:\Code\cookbook\cookbook\cookbook\obj\Debug\cookbook.csproj.GenerateResource.ca
 E:\Code\cookbook\cookbook\cookbook\obj\Debug\cookbook.csproj.CopyComplete
 E:\Code\cookbook\cookbook\cookbook\obj\Debug\cookbook.exe
 E:\Code\cookbook\cookbook\cookbook\obj\Debug\cookbook.pdb
+E:\Code\cookbook\cookbook\cookbook\obj\Debug\cookbook.adding.resources

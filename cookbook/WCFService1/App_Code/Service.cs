@@ -41,6 +41,25 @@ public class Service : IService
 		return db.Tests();
 	}
 
+	public List<string> GetCategory()
+	{
+		return db.GetCategorys();
+	}
+
+	public void AddAutors(string name)
+	{
+		db.AddAutor(name);
+	}
+	public void AddKitchens(string name)
+	{
+		db.AddKitchen(name);
+	}
+
+	public void AddIngredients(string name)
+	{
+		db.AddIngredient(name);
+	}
+
 	public void AddRecept(string name, string autor, string kitchen, string howto, string category, string description, string calories,
 						   string ingred1, int measurec1, string measure1, string ingred2 = "", int measurec2 = -1, string measure2 = "",
 						   string ingred3 = "", int measurec3 = -1, string measure3 = "", string ingred4 = "", int measurec4 = -1, string measure4 = "",
