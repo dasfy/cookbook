@@ -139,6 +139,8 @@ namespace cookbook
             service.AddRecept(name, autor, kitchen, howto, category, description, calories, ingred1, measureV1, measure1,
                               ingred2, measureV2, measure2, ingred3, measureV3, measure3, ingred4, measureV4, measure4,
                               ingred5, measureV5, measure5);
+
+            MessageBox.Show("Рецепт добавлен", "");
         }
 
         private void button1_Click(object sender, EventArgs e)
